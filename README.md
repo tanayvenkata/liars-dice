@@ -14,6 +14,34 @@ Optimal thresholds discovered via **32.4 million game round-robin tournament** (
 
 ![Tournament Heatmap](results/tournament_heatmap.png)
 
+### OPTIMAL vs Archetypes
+
+![Archetype Heatmap](results/optimal_vs_archetypes.png)
+
+## Can You Beat It?
+
+Think you can build a better Liar's Dice AI? Clone the repo and try:
+
+```bash
+git clone https://github.com/tanayvenkata/liars-dice.git
+cd liars-dice
+python play.py  # Play against OPTIMAL yourself
+```
+
+Or implement your own agent (see [Build Your Own Agent](#build-your-own-agent)) and run:
+
+```python
+from test_deterministic import run_tournament
+from agents.deterministic_agent import create_personality_agent
+
+my_agent = MyAgent("Challenger")
+optimal = create_personality_agent("OPTIMAL")
+results = run_tournament(my_agent, optimal, num_games=1000)
+print(f"Your win rate: {results['agent1_win_rate']:.1%}")
+```
+
+**The bar to beat: 50%** - Can you consistently beat an agent that wins 56.5% against the field?
+
 ## Quick Start
 
 ```bash
@@ -100,7 +128,8 @@ liars-dice/
 │   ├── types.py               # Bid, Action, PlayerView dataclasses
 │   └── prompts_v2.py          # Probability calculations
 ├── results/
-│   └── tournament_heatmap.png # 32.4M game tournament results
+│   ├── tournament_heatmap.png      # 32.4M game threshold sweep
+│   └── optimal_vs_archetypes.png   # 5x5 archetype round robin
 ├── play.py                    # Interactive CLI
 ├── test_deterministic.py      # Agent test suite
 ├── visualize.py               # Tournament visualization
