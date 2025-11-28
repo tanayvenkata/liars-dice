@@ -1,6 +1,6 @@
 # Liar's Dice
 
-A complete Liar's Dice game engine with a tournament-winning deterministic AI agent.
+A complete Liar's Dice game engine with a tournament-winning deterministic agent.
 
 ## Tournament Results
 
@@ -20,7 +20,7 @@ Optimal thresholds discovered via **32.4 million game round-robin tournament** (
 
 ## Can You Beat It?
 
-Think you can build a better Liar's Dice AI? Clone the repo and try:
+Think you can build a better Liar's Dice agent? Clone the repo and try:
 
 ```bash
 git clone https://github.com/tanayvenkata/liars-dice.git
@@ -64,8 +64,8 @@ python play.py
 ==================================================
 
 Select game mode:
-  1. Play - Human vs AI
-  2. Watch - AI vs AI (verbose)
+  1. Play - Human vs Bot
+  2. Watch - Bot vs Bot (verbose)
   3. Tournament - Fast head-to-head
 ```
 
@@ -122,7 +122,7 @@ liars-dice/
 ├── agents/
 │   ├── base.py                # Agent interface
 │   ├── human.py               # Human player input
-│   └── deterministic_agent.py # AI agent with optimal thresholds
+│   └── deterministic_agent.py # Agent with optimal thresholds
 ├── game/
 │   ├── engine.py              # Game rules and state management
 │   ├── types.py               # Bid, Action, PlayerView dataclasses
